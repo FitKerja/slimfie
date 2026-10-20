@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dashboard SLIMFie</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Dashboard pasien SLIMFie: status pembayaran, pilih jadwal konsultasi, dan tautan video call.">
+<meta name="theme-color" content="#05372D">
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/mulai.css">
+<link rel="stylesheet" href="assets/css/dasbor.css">
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/dasbor.js" defer></script>
+</head>
+<body class="hal-alur">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-panah" viewBox="0 0 24 24"><path d="M4.5 12h14M13 6.5l5.5 5.5-5.5 5.5"/></symbol>
+  <symbol id="i-jam" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 1.8"/></symbol>
+  <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6.5" width="12.5" height="11" rx="2.5"/><path d="M15.5 11 21 7.8v8.4L15.5 13"/></symbol>
+  <symbol id="i-uang" viewBox="0 0 24 24"><rect x="3" y="6.5" width="18" height="11" rx="2.5"/><circle cx="12" cy="12" r="2.4"/></symbol>
+  <symbol id="i-perisai" viewBox="0 0 24 24"><path d="M12 3.2 20 6v6.2c0 5-3.6 8.2-8 9.4-4.4-1.2-8-4.4-8-9.4V6l8-2.8Z"/><path d="m8.8 12 2.3 2.3 4.2-4.4"/></symbol>
+  <symbol id="i-orang" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.8 20.2a7.4 7.4 0 0 1 14.4 0"/></symbol>
+  <symbol id="i-keluar" viewBox="0 0 24 24"><path d="M14 4.5h4.5v15H14M10 8l-4 4 4 4M6 12h10"/></symbol>
+</svg>
+
+<a class="lewati" href="#utama">Lewati ke konten</a>
+
+<header class="nav nav--melekat" data-nav data-nav-tetap>
+  <div class="wadah nav__isi">
+    <a class="merek" href="index.html" aria-label="SLIMFie, ke beranda">
+      <img src="assets/favicon.svg" alt="" width="30" height="30">SLIMFie
+    </a>
+    <nav class="nav__pil" id="nav-tautan" data-nav-tautan aria-label="Navigasi utama">
+      <a href="index.html">Beranda</a>
+      <a href="index.html#berat-badan">Program</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#kontak">Kontak</a>
+      <a class="nav__seluler" href="masuk.html" data-keluar>Keluar</a>
+    </nav>
+    <div class="nav__aksi">
+      <a class="tombol tombol--garis-gelap nav__cta" href="masuk.html" data-keluar><svg class="ikon"><use href="#i-keluar"/></svg>Keluar</a>
+      <button class="nav__tombol" type="button" data-nav-tombol aria-controls="nav-tautan" aria-expanded="false" aria-label="Buka menu">
+        <span class="nav__garis"></span><span class="nav__garis"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="utama">
+<section class="alur">
+  <div class="wadah dasbor">
+    <div class="dasbor__kepala">
+      <div>
+        <span class="eyebrow">Dashboard pasien</span>
+        <h1 id="sapaan">Halo</h1>
+        <p id="email-pengguna"></p>
+      </div>
+      <a class="tombol tombol--garis-gelap tombol--kecil" href="mulai.html">Evaluasi baru</a>
+    </div>
+
+    <div class="kartu-alur dasbor__status" id="status-muat">
+      <span class="pemuat" aria-hidden="true"></span>
+      <p>Memuat data Anda…</p>
+    </div>
+
+    <div class="kartu-alur dasbor__status" id="status-galat" hidden>
+      <h2 class="kartu-alur__judul">Dashboard tidak dapat dimuat</h2>
+      <p class="kartu-alur__teks" id="pesan-galat"></p>
+      <button type="button" class="tombol tombol--utama" id="tombol-muat-ulang">Coba lagi</button>
+    </div>
+
+    <div class="kartu-alur dasbor__status" id="status-kosong" hidden>
+      <h2 class="kartu-alur__judul">Belum ada permintaan konsultasi</h2>
+      <p class="kartu-alur__teks">Mulai dengan mengisi evaluasi kesehatan awal (3–5 menit). Setelah pembayaran, Anda memilih jadwal konsultasi di sini.</p>
+      <a class="tombol tombol--utama" href="mulai.html">Mulai evaluasi <svg class="ikon"><use href="#i-panah"/></svg></a>
+    </div>
+
+    <div class="kartu-alur dasbor__status" id="status-staf" hidden>
+      <h2 class="kartu-alur__judul">Dashboard staf sedang disiapkan</h2>
+      <p class="kartu-alur__teks" id="pesan-staf"></p>
+    </div>
+
+    <div id="daftar-pesanan" aria-live="polite"></div>
+
+    <p class="alur__catatan">Butuh bantuan? <a href="mailto:cs@slimfie.com">cs@slimfie.com</a></p>
+  </div>
+</section>
+</main>
+
+<footer class="kaki" style="padding-top:34px">
+  <div class="wadah">
+    <div class="kaki__bawah" style="margin-top:0;border-top:0;padding-top:0">
+      <p class="kaki__hak">&copy; HERIK OKTA JONANDA 2026</p>
+      <p class="kaki__kecil">SLIMFie bukan layanan gawat darurat. Untuk keluhan akut, hubungi fasilitas kesehatan terdekat.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

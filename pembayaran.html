@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pembayaran SLIMFie</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Selesaikan pembayaran konsultasi dokter spesialis gizi klinik SLIMFie.">
+<meta name="theme-color" content="#05372D">
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/mulai.css">
+<link rel="stylesheet" href="assets/css/pembayaran.css">
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/pembayaran.js" defer></script>
+</head>
+<body class="hal-alur">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-panah" viewBox="0 0 24 24"><path d="M4.5 12h14M13 6.5l5.5 5.5-5.5 5.5"/></symbol>
+  <symbol id="i-kiri" viewBox="0 0 24 24"><path d="M19.5 12h-14M11 6.5 5.5 12l5.5 5.5"/></symbol>
+  <symbol id="i-centang" viewBox="0 0 24 24"><path d="M20 6.5 9.5 17 4 11.5"/></symbol>
+  <symbol id="i-perisai" viewBox="0 0 24 24"><path d="M12 3.2 20 6v6.2c0 5-3.6 8.2-8 9.4-4.4-1.2-8-4.4-8-9.4V6l8-2.8Z"/><path d="m8.8 12 2.3 2.3 4.2-4.4"/></symbol>
+  <symbol id="i-kunci" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="9.5" rx="2.5"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></symbol>
+  <symbol id="i-jam" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 1.8"/></symbol>
+  <symbol id="i-qr" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><path d="M13.5 13.5h3v3M20.5 13.5v7h-4M16.5 20.5v-2"/></symbol>
+  <symbol id="i-bank" viewBox="0 0 24 24"><path d="M3.5 9.5 12 4l8.5 5.5M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3.5 20h17"/></symbol>
+</svg>
+
+<a class="lewati" href="#utama">Lewati ke konten</a>
+
+<header class="nav nav--melekat" data-nav data-nav-tetap>
+  <div class="wadah nav__isi">
+    <a class="merek" href="index.html" aria-label="SLIMFie, ke beranda">
+      <img src="assets/favicon.svg" alt="" width="30" height="30">SLIMFie
+    </a>
+    <nav class="nav__pil" id="nav-tautan" data-nav-tautan aria-label="Navigasi utama">
+      <a href="index.html">Beranda</a>
+      <a href="index.html#program">Program</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#kontak">Kontak</a>
+      <a class="nav__seluler" href="dasbor.html">Dashboard</a>
+    </nav>
+    <div class="nav__aksi">
+      <span class="bayar__aman"><svg class="ikon"><use href="#i-kunci"/></svg>Pembayaran aman</span>
+      <button class="nav__tombol" type="button" data-nav-tombol aria-controls="nav-tautan" aria-expanded="false" aria-label="Buka menu">
+        <span class="nav__garis"></span><span class="nav__garis"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="utama">
+<section class="alur">
+  <div class="wadah bayar">
+
+    <!-- Memuat -->
+    <div class="kartu-alur bayar__status" id="status-muat">
+      <span class="pemuat" aria-hidden="true"></span>
+      <p>Memuat pesanan Anda…</p>
+    </div>
+
+    <!-- Galat memuat -->
+    <div class="kartu-alur bayar__status" id="status-galat" hidden>
+      <h1 class="kartu-alur__judul">Pesanan tidak dapat dibuka</h1>
+      <p class="kartu-alur__teks" id="pesan-galat-muat">Nomor pesanan tidak dikenali.</p>
+      <div class="aksi-baris" style="justify-content:center">
+        <a class="tombol tombol--utama" href="mulai.html">Mulai konsultasi <svg class="ikon"><use href="#i-panah"/></svg></a>
+        <a class="tombol tombol--garis-gelap" href="mailto:cs@slimfie.com">Hubungi cs@slimfie.com</a>
+      </div>
+    </div>
+
+    <!-- Form pembayaran -->
+    <div class="bayar__kisi" id="tampilan-bayar" hidden>
+      <form class="kartu-alur" id="form-bayar" novalidate>
+        <span class="kartu-alur__langkah">Langkah terakhir</span>
+        <h1 class="kartu-alur__judul">Selesaikan pembayaran konsultasi</h1>
+        <p class="kartu-alur__teks">Nomor permintaan <strong data-isi="ref">—</strong>. Setelah pembayaran berhasil, Anda memilih jadwal konsultasi dengan dokter Sp.GK di dashboard.</p>
+
+        <div class="kartu-alur__isi">
+          <div class="kotak-info kotak-info--kuning" id="info-mode-uji" hidden>
+            <svg class="ikon"><use href="#i-perisai"/></svg>
+            <span><strong>Mode uji.</strong> Pembayaran disimulasikan dan tidak ada dana yang ditarik.</span>
+          </div>
+
+          <fieldset class="metode">
+            <legend class="bidang__label">Pilih metode pembayaran</legend>
+            <div class="pilihan-besar">
+              <label><svg class="ikon"><use href="#i-qr"/></svg><input type="radio" name="metode" value="qris" checked> QRIS</label>
+              <label><svg class="ikon"><use href="#i-bank"/></svg><input type="radio" name="metode" value="va_bca"> VA BCA</label>
+              <label><svg class="ikon"><use href="#i-bank"/></svg><input type="radio" name="metode" value="va_mandiri"> VA Mandiri</label>
+              <label><svg class="ikon"><use href="#i-bank"/></svg><input type="radio" name="metode" value="va_bni"> VA BNI</label>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="tombol tombol--utama tombol--lebar tombol-bayar" id="tombol-bayar">
+            <span class="pemuat pemuat--kecil" aria-hidden="true"></span>
+            <span id="label-bayar">Bayar <span data-isi="jumlah">Rp199.000</span></span>
+          </button>
+          <p class="galat" id="galat-bayar" role="alert"></p>
+          <p class="bayar__kunci">Nomor pesanan <code data-isi="order_id"></code> dipakai sebagai kunci transaksi. Bila koneksi terputus, mencoba lagi tidak akan menagih Anda dua kali.</p>
+        </div>
+      </form>
+
+      <aside class="kartu ringkas-bayar" aria-labelledby="judul-ringkas">
+        <h2 id="judul-ringkas">Ringkasan permintaan</h2>
+        <dl class="ringkas-bayar__daftar">
+          <div><dt>Nama</dt><dd data-isi="nama">—</dd></div>
+          <div><dt>Konsultasi</dt><dd>Dokter Sp.GK</dd></div>
+          <div><dt>Jadwal</dt><dd>Dipilih setelah lunas</dd></div>
+          <div><dt>Metode</dt><dd>Video call (Google Meet)</dd></div>
+        </dl>
+        <div class="ringkas-bayar__total">
+          <span>Total tagihan</span>
+          <strong data-isi="jumlah">Rp199.000</strong>
+        </div>
+        <p class="ringkas-bayar__catatan">Tidak ada biaya tambahan pada tahap ini. Biaya terapi atau obat, bila diindikasikan dokter, diinformasikan terpisah sebelum Anda menyetujui.</p>
+      </aside>
+    </div>
+
+    <!-- Lunas -->
+    <div class="kartu-alur selesai" id="tampilan-lunas" tabindex="-1" hidden>
+      <div class="selesai__ikon"><svg class="ikon"><use href="#i-centang"/></svg></div>
+      <h1 class="kartu-alur__judul">Pembayaran berhasil</h1>
+      <p class="kartu-alur__teks">Terima kasih, <strong data-isi="nama">—</strong>. Langkah berikutnya: pilih jadwal konsultasi dengan dokter Sp.GK. Setelah dokter menyetujui, tautan Google Meet muncul di dashboard Anda.</p>
+      <span class="selesai__ref">Referensi <span data-isi="ref">—</span></span>
+      <div class="kartu-alur__isi">
+        <dl class="ringkasan">
+          <div class="ringkasan__baris"><dt>ID transaksi</dt><dd data-isi="transaksi_id">—</dd></div>
+          <div class="ringkasan__baris"><dt>Metode</dt><dd data-isi="metode_bayar">—</dd></div>
+          <div class="ringkasan__baris"><dt>Jumlah</dt><dd data-isi="jumlah">—</dd></div>
+          <div class="ringkasan__baris"><dt>Waktu bayar</dt><dd data-isi="dibayar">—</dd></div>
+        </dl>
+        <div class="selesai__aksi">
+          <a class="tombol tombol--utama" id="tautan-pilih-jadwal" href="dasbor.html">Pilih jadwal konsultasi <svg class="ikon"><use href="#i-panah"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <p class="alur__catatan">Butuh bantuan pembayaran? <a href="mailto:cs@slimfie.com">cs@slimfie.com</a></p>
+  </div>
+</section>
+</main>
+
+<footer class="kaki" style="padding-top:34px">
+  <div class="wadah">
+    <div class="kaki__bawah" style="margin-top:0;border-top:0;padding-top:0">
+      <p class="kaki__hak">&copy; HERIK OKTA JONANDA 2026</p>
+      <p class="kaki__kecil">SLIMFie bukan layanan gawat darurat. Untuk keluhan akut, hubungi fasilitas kesehatan terdekat.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

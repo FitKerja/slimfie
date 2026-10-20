@@ -1,0 +1,45 @@
+/* =========================================================
+   SLIMFie — halaman pembayaran (pembayaran.html)
+   Dimuat setelah style.css dan mulai.css.
+   ========================================================= */
+
+.bayar { max-width: 1060px; }
+.bayar__kisi { display: grid; grid-template-columns: 1.35fr 0.85fr; gap: 24px; align-items: start; }
+.bayar__status { text-align: center; display: grid; gap: 14px; justify-items: center; color: var(--ink-2); }
+.bayar__aman { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; color: var(--hijau-700); }
+.bayar__aman .ikon { width: 17px; height: 17px; }
+
+.metode { border: 0; padding: 0; margin: 0; display: grid; gap: 12px; min-width: 0; }
+.metode legend { padding: 0; margin-bottom: 12px; }
+.metode:disabled label { opacity: 0.6; cursor: not-allowed; }
+
+.tombol-bayar { min-height: 56px; font-size: 16.5px; }
+.tombol-bayar:disabled { cursor: not-allowed; transform: none; opacity: 0.85; background: var(--hijau-700); }
+.tombol-bayar .pemuat { display: none; }
+.tombol-bayar[aria-busy="true"] .pemuat { display: inline-block; }
+
+.bayar__kunci { font-size: 12.5px; color: var(--muted); }
+.bayar__kunci code { font-size: 11.5px; background: var(--hijau-50); border: 1px solid var(--line); border-radius: 6px; padding: 1px 6px; overflow-wrap: anywhere; }
+
+.ringkas-bayar { position: sticky; top: calc(var(--tinggi-nav) + 24px); display: grid; gap: 16px; }
+.ringkas-bayar h2 { font-size: 18px; }
+.ringkas-bayar__daftar { display: grid; gap: 10px; margin: 0; font-size: 14.5px; }
+.ringkas-bayar__daftar div { display: flex; justify-content: space-between; gap: 12px; }
+.ringkas-bayar__daftar dt { color: var(--ink-2); }
+.ringkas-bayar__daftar dd { margin: 0; color: var(--ink); font-weight: 600; text-align: right; }
+.ringkas-bayar__total {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+  padding-top: 16px; border-top: 1px dashed var(--line);
+}
+.ringkas-bayar__total span { font-size: 14px; color: var(--muted); }
+.ringkas-bayar__total strong { font-family: var(--f-judul); font-size: 26px; letter-spacing: -0.03em; color: var(--hijau-700); font-variant-numeric: tabular-nums; }
+.ringkas-bayar__catatan { font-size: 12.5px; color: var(--muted); }
+
+@media (max-width: 900px) {
+  .bayar__kisi { grid-template-columns: 1fr; }
+  .ringkas-bayar { position: static; order: -1; }
+}
+@media (max-width: 560px) {
+  .bayar__aman { display: none; }
+  .metode .pilihan-besar { grid-template-columns: 1fr 1fr; }
+}

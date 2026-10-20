@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dashboard Dokter SLIMFie</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Dashboard dokter spesialis gizi klinik SLIMFie: tinjau evaluasi pasien, setujui jadwal, dan buka Google Meet.">
+<meta name="theme-color" content="#05372D">
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/mulai.css">
+<link rel="stylesheet" href="assets/css/dasbor.css">
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/dokter.js" defer></script>
+</head>
+<body class="hal-alur">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-centang" viewBox="0 0 24 24"><path d="M20 6.5 9.5 17 4 11.5"/></symbol>
+  <symbol id="i-silang" viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></symbol>
+  <symbol id="i-jam" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 1.8"/></symbol>
+  <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6.5" width="12.5" height="11" rx="2.5"/><path d="M15.5 11 21 7.8v8.4L15.5 13"/></symbol>
+  <symbol id="i-dokumen" viewBox="0 0 24 24"><path d="M6 3.5h7l5 5v12H6z"/><path d="M13 3.5v5h5M9 13h6M9 16.5h6"/></symbol>
+  <symbol id="i-muat" viewBox="0 0 24 24"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4.5v4h-4"/></symbol>
+  <symbol id="i-keluar" viewBox="0 0 24 24"><path d="M14 4.5h4.5v15H14M10 8l-4 4 4 4M6 12h10"/></symbol>
+</svg>
+
+<a class="lewati" href="#utama">Lewati ke konten</a>
+
+<header class="nav nav--melekat" data-nav data-nav-tetap>
+  <div class="wadah nav__isi">
+    <a class="merek" href="index.html" aria-label="SLIMFie, ke beranda">
+      <img src="assets/favicon.svg" alt="" width="30" height="30">SLIMFie
+    </a>
+    <nav class="nav__pil" id="nav-tautan" data-nav-tautan aria-label="Navigasi dashboard">
+      <a href="#permintaan">Permintaan</a>
+      <a href="#jadwal">Jadwal</a>
+      <a href="#riwayat">Riwayat</a>
+      <a class="nav__seluler" href="masuk.html" data-keluar>Keluar</a>
+    </nav>
+    <div class="nav__aksi">
+      <a class="tombol tombol--garis-gelap nav__cta" href="masuk.html" data-keluar><svg class="ikon"><use href="#i-keluar"/></svg>Keluar</a>
+      <button class="nav__tombol" type="button" data-nav-tombol aria-controls="nav-tautan" aria-expanded="false" aria-label="Buka menu">
+        <span class="nav__garis"></span><span class="nav__garis"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="utama">
+<section class="alur">
+  <div class="wadah dasbor dasbor--lebar">
+    <div class="dasbor__kepala">
+      <div>
+        <span class="eyebrow">Dashboard dokter</span>
+        <h1 id="nama-dokter">Dokter</h1>
+        <p id="info-dokter"></p>
+      </div>
+      <button type="button" class="tombol tombol--garis-gelap tombol--kecil" id="tombol-segarkan"><svg class="ikon"><use href="#i-muat"/></svg>Segarkan</button>
+    </div>
+
+    <div class="kartu-alur dasbor__status" id="status-muat">
+      <span class="pemuat" aria-hidden="true"></span>
+      <p>Memuat dashboard…</p>
+    </div>
+
+    <div class="kartu-alur dasbor__status" id="status-galat" hidden>
+      <h2 class="kartu-alur__judul">Dashboard tidak dapat dimuat</h2>
+      <p class="kartu-alur__teks" id="pesan-galat"></p>
+      <button type="button" class="tombol tombol--utama" id="tombol-muat-ulang">Coba lagi</button>
+    </div>
+
+    <div id="isi-dokter" hidden>
+      <div class="kotak-info pemberitahuan" id="pemberitahuan" role="status" hidden></div>
+      <div class="statistik" id="statistik"></div>
+
+      <section class="kartu-alur bagian-dokter" id="permintaan" aria-labelledby="judul-permintaan">
+        <div class="bagian-dokter__kepala">
+          <h2 id="judul-permintaan">Permintaan menunggu persetujuan</h2>
+          <p>Tinjau evaluasi pasien, lalu setujui atau tolak jadwalnya. Saat disetujui, tautan Google Meet dibuat otomatis.</p>
+        </div>
+        <div id="daftar-permintaan" aria-live="polite"></div>
+      </section>
+
+      <section class="kartu-alur bagian-dokter" id="jadwal" aria-labelledby="judul-jadwal">
+        <div class="bagian-dokter__kepala">
+          <h2 id="judul-jadwal">Jadwal konsultasi</h2>
+          <p>Konsultasi yang sudah disetujui. Pasien melihat tautan Meet mulai 15 menit sebelum jadwal.</p>
+        </div>
+        <div id="daftar-jadwal" aria-live="polite"></div>
+      </section>
+
+      <section class="kartu-alur bagian-dokter" id="riwayat" aria-labelledby="judul-riwayat">
+        <div class="bagian-dokter__kepala">
+          <h2 id="judul-riwayat">Riwayat</h2>
+          <p>30 konsultasi terakhir yang selesai atau ditolak.</p>
+        </div>
+        <div id="daftar-riwayat"></div>
+      </section>
+    </div>
+
+    <p class="alur__catatan">Data pasien bersifat rahasia dan hanya untuk keperluan konsultasi. Kendala teknis: <a href="mailto:cs@slimfie.com">cs@slimfie.com</a></p>
+  </div>
+</section>
+</main>
+
+<footer class="kaki" style="padding-top:34px">
+  <div class="wadah">
+    <div class="kaki__bawah" style="margin-top:0;border-top:0;padding-top:0">
+      <p class="kaki__hak">&copy; HERIK OKTA JONANDA 2026</p>
+      <p class="kaki__kecil">Dashboard internal SLIMFie untuk dokter spesialis gizi klinik.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

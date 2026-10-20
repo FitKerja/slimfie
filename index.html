@@ -1,0 +1,1406 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>SLIMFie</title>
+    <meta name="claude:viewport-fit-sides" content="cover" />
+    <meta
+      name="description"
+      content="SLIMFie menghadirkan layanan pengelolaan berat badan secara online bersama dokter spesialis gizi klinik: evaluasi kesehatan, rencana personal, dan pendampingan selama program."
+    />
+    <meta name="theme-color" content="#05372D" />
+    <meta
+      property="og:title"
+      content="SLIMFie — Cara baru mengelola berat badan bersama dokter Sp.GK"
+    />
+    <meta
+      property="og:description"
+      content="Layanan pengelolaan berat badan online bersama Dokter Spesialis Gizi Klinik. Tanpa antre, tanpa proses berbelit."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/img/timbangan-w.jpg" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <!-- Ikon garis (satu set, dipakai dengan <use href="#i-…">) -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <symbol id="i-panah" viewBox="0 0 24 24">
+        <path d="M4.5 12h14M13 6.5l5.5 5.5-5.5 5.5" />
+      </symbol>
+      <symbol id="i-centang" viewBox="0 0 24 24">
+        <path d="M20 6.5 9.5 17 4 11.5" />
+      </symbol>
+      <symbol id="i-timbangan" viewBox="0 0 24 24">
+        <path
+          d="M12 4v15M7.5 19h9M5 8h14M7.5 8l-2.5 5.5h5L7.5 8Zm9 0L14 13.5h5L16.5 8Z"
+        />
+      </symbol>
+      <symbol id="i-mangkuk" viewBox="0 0 24 24">
+        <path
+          d="M3.5 11h17a8.5 8.5 0 0 1-17 0Zm5-3.2c0-1.6 1.2-2 1.2-3.6M12.4 7.8c0-1.6 1.2-2 1.2-3.6M16 7.8c0-1.6 1.2-2 1.2-3.6"
+        />
+      </symbol>
+      <symbol id="i-daun" viewBox="0 0 24 24">
+        <path
+          d="M20 4c0 9.4-6 16-16 16 0-9.4 6.6-16 16-16ZM5 19C8.5 13.5 12 10 17.5 6.5"
+        />
+      </symbol>
+      <symbol id="i-stetoskop" viewBox="0 0 24 24">
+        <path
+          d="M6 3v5.5a4 4 0 0 0 8 0V3M5 3H3.5M13 3h1.5M10 12.5v2.5a4 4 0 0 0 8 0v-1.8M18 8.6a2.1 2.1 0 1 1 0 4.2 2.1 2.1 0 0 1 0-4.2Z"
+        />
+      </symbol>
+      <symbol id="i-jam" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="8.5" />
+        <path d="M12 7.5V12l3 1.8" />
+      </symbol>
+      <symbol id="i-kalender" viewBox="0 0 24 24">
+        <rect x="3.5" y="5" width="17" height="15" rx="2.5" />
+        <path d="M3.5 10h17M8 3v4M16 3v4" />
+      </symbol>
+      <symbol id="i-video" viewBox="0 0 24 24">
+        <rect x="3" y="6.5" width="12.5" height="11" rx="2.5" />
+        <path d="M15.5 11 21 7.8v8.4L15.5 13" />
+      </symbol>
+      <symbol id="i-uang" viewBox="0 0 24 24">
+        <rect x="3" y="6.5" width="18" height="11" rx="2.5" />
+        <circle cx="12" cy="12" r="2.4" />
+      </symbol>
+      <symbol id="i-surel" viewBox="0 0 24 24">
+        <rect x="3" y="5.5" width="18" height="13" rx="2.5" />
+        <path d="m3.8 7.5 8.2 6 8.2-6" />
+      </symbol>
+      <symbol id="i-obrol" viewBox="0 0 24 24">
+        <path d="M20.5 11.5a8.5 8.5 0 1 1-3.6-6.9" />
+        <path d="M20.5 3.5 19 8.2l-4.6-.6" />
+      </symbol>
+      <symbol id="i-silang" viewBox="0 0 24 24">
+        <path d="M6 6l12 12M18 6 6 18" />
+      </symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24">
+        <path d="M12 5v14M5 12h14" />
+      </symbol>
+      <symbol id="i-perisai" viewBox="0 0 24 24">
+        <path
+          d="M12 3.2 20 6v6.2c0 5-3.6 8.2-8 9.4-4.4-1.2-8-4.4-8-9.4V6l8-2.8Z"
+        />
+        <path d="m8.8 12 2.3 2.3 4.2-4.4" />
+      </symbol>
+      <symbol id="i-grafik" viewBox="0 0 24 24">
+        <path d="M4 19.5h16M6.5 16l3.8-4.8 3 2.8 4.6-6.4" />
+      </symbol>
+      <symbol id="i-hati" viewBox="0 0 24 24">
+        <path
+          d="M12 20s-7.5-4.3-7.5-9.6A4.4 4.4 0 0 1 12 7.4a4.4 4.4 0 0 1 7.5 3c0 5.3-7.5 9.6-7.5 9.6Z"
+        />
+      </symbol>
+      <symbol id="i-bulan" viewBox="0 0 24 24">
+        <path d="M20 14.2A8.4 8.4 0 0 1 9.8 4a8.5 8.5 0 1 0 10.2 10.2Z" />
+      </symbol>
+      <symbol id="i-dokumen" viewBox="0 0 24 24">
+        <path d="M6 3.5h7l5 5v12H6z" />
+        <path d="M13 3.5v5h5M9 13h6M9 16.5h6" />
+      </symbol>
+      <symbol id="i-tetes" viewBox="0 0 24 24">
+        <path
+          d="M12 3.5s5.5 5.4 5.5 9.2A5.5 5.5 0 0 1 6.5 12.7C6.5 8.9 12 3.5 12 3.5Z"
+        />
+      </symbol>
+      <symbol id="i-aktivitas" viewBox="0 0 24 24">
+        <path d="M3 12h4l2.5-6 4 12 2.5-6h5" />
+      </symbol>
+      <symbol id="i-wa" viewBox="0 0 24 24">
+        <path d="M3.6 20.4 4.9 16A8.6 8.6 0 1 1 8 19.1l-4.4 1.3Z" />
+        <path
+          d="M9.2 8.3c.3-.6.6-.6.9-.6h.6c.2 0 .4.1.5.4l.7 1.7c.1.3 0 .5-.1.6l-.5.6c-.1.2-.2.3 0 .6.3.6.8 1.2 1.3 1.6.5.5 1.1.8 1.6 1 .3.1.4.1.6-.1l.6-.7c.2-.2.4-.2.6-.1l1.7.8c.2.1.4.2.4.4 0 .3 0 1-.5 1.5-.4.4-1.2.8-2 .7-1-.1-2.4-.6-3.8-1.9-1.4-1.3-2.2-2.8-2.4-3.8-.2-1 .1-1.8.3-2.1Z"
+          fill="currentColor"
+          stroke="none"
+        />
+      </symbol>
+    </svg>
+
+    <a class="lewati" href="#utama">Lewati ke konten</a>
+
+    <!-- ================= NAVIGASI ================= -->
+    <header class="nav" data-nav>
+      <div class="wadah nav__isi">
+        <a class="merek" href="#beranda" aria-label="SLIMFie, ke beranda">
+          <img src="assets/favicon.svg" alt="" width="30" height="30" />SLIMFie
+        </a>
+        <nav
+          class="nav__pil"
+          id="nav-tautan"
+          data-nav-tautan
+          aria-label="Navigasi utama"
+        >
+          <a href="#beranda">Beranda</a>
+          <a href="#berat-badan">Program</a>
+          <a href="#faq">FAQ</a>
+          <a href="#kontak">Kontak</a>
+          <a href="masuk.html" data-tautan-masuk>Masuk</a>
+          <a class="nav__cta-pil" href="mulai.html">Mulai konsultasi</a>
+        </nav>
+        <div class="nav__aksi">
+          <a class="tombol tombol--utama nav__cta" href="mulai.html"
+            >Mulai konsultasi</a
+          >
+          <button
+            class="nav__tombol"
+            type="button"
+            data-nav-tombol
+            aria-controls="nav-tautan"
+            aria-expanded="false"
+            aria-label="Buka menu"
+          >
+            <span class="nav__garis"></span><span class="nav__garis"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="utama">
+      <!-- ================= HERO ================= -->
+      <section class="hero" id="beranda">
+        <div class="hero__air" aria-hidden="true">SLIMFie</div>
+        <div class="wadah">
+          <div class="hero__isi">
+            <span class="hero__eyebrow"
+              ><svg class="ikon"><use href="#i-stetoskop" /></svg>Pendampingan
+              dokter spesialis gizi klinik</span
+            >
+            <h1 class="hero__judul">
+              <span class="hero__baris">Cara baru mengelola berat badan</span>
+              <span class="hero__baris hero__baris--aksen"
+                >bersama Dokter Spesialis Gizi Klinik</span
+              >
+            </h1>
+            <p class="hero__teks">
+              Mulai perjalanan menuju berat badan ideal bersama SLIMFie. Layanan
+              medis online yang praktis, ditangani tenaga medis berlisensi.
+              Tanpa antre di ruang tunggu dan ringkas.
+            </p>
+            <div class="hero__aksi">
+              <a class="tombol tombol--putih" href="mulai.html"
+                >Mulai konsultasi
+                <svg class="ikon"><use href="#i-panah" /></svg
+              ></a>
+              <a class="tombol tombol--garis" href="#program">Pelajari program</a>
+            </div>
+            <div class="hero__meta">
+              <span
+                ><svg class="ikon"><use href="#i-perisai" /></svg>Ditinjau
+                dokter berlisensi</span
+              >
+              <span
+                ><svg class="ikon"><use href="#i-video" /></svg>Konsultasi 100%
+                online</span
+              >
+              <span
+                ><svg class="ikon"><use href="#i-jam" /></svg>Pendampingan
+                24/7</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= KARTU LAYANAN ================= -->
+      <div class="strip-layanan">
+        <div class="wadah">
+          <nav class="kartu-layanan" aria-label="Layanan SLIMFie">
+            <a
+              class="kartu-layanan__item"
+              data-nuansa="mint"
+              href="#berat-badan"
+            >
+              <span class="kartu-layanan__gambar">
+                <img
+                  src="assets/img/kartu-berat-w.jpg"
+                  alt="Perempuan bertubuh penuh berdiri di tepi sungai sebelum menjalani program penurunan berat badan"
+                  width="600"
+                  height="600"
+                  decoding="async"
+                />
+                <span class="kartu-layanan__lencana"
+                  ><svg class="ikon"><use href="#i-timbangan" /></svg
+                ></span>
+              </span>
+              <span class="kartu-layanan__teks"
+                ><span
+                  ><strong>Berat Badan</strong
+                  ><small>Program turun berat dengan dokter Sp.GK</small></span
+                ><svg class="ikon"><use href="#i-panah" /></svg
+              ></span>
+            </a>
+            <a class="kartu-layanan__item" data-nuansa="krem" href="#gizi">
+              <span class="kartu-layanan__gambar">
+                <img
+                  src="assets/img/kartu-gizi-w.jpg"
+                  alt="Sepiring sayuran segar berserat tinggi siap disantap"
+                  width="600"
+                  height="600"
+                  decoding="async"
+                />
+                <span class="kartu-layanan__lencana"
+                  ><svg class="ikon"><use href="#i-mangkuk" /></svg
+                ></span>
+              </span>
+              <span class="kartu-layanan__teks"
+                ><span
+                  ><strong>Makan Bergizi</strong
+                  ><small>Panduan gizi berserat tinggi</small></span
+                ><svg class="ikon"><use href="#i-panah" /></svg
+              ></span>
+            </a>
+            <a class="kartu-layanan__item" data-nuansa="ungu" href="#resep">
+              <span class="kartu-layanan__gambar">
+                <img
+                  src="assets/img/kartu-resep-hijau.jpg"
+                  alt="Botol obat resep dengan latar tanaman hijau"
+                  width="600"
+                  height="600"
+                  decoding="async"
+                />
+                <span class="kartu-layanan__lencana"
+                  ><svg class="ikon"><use href="#i-dokumen" /></svg
+                ></span>
+              </span>
+              <span class="kartu-layanan__teks"
+                ><span
+                  ><strong>Resep SLIMFie</strong
+                  ><small>Resep dokter Sp.GK beserta obatnya</small></span
+                ><svg class="ikon"><use href="#i-panah" /></svg
+              ></span>
+            </a>
+            <a
+              class="kartu-layanan__item"
+              data-nuansa="biru"
+              href="#pola-hidup"
+            >
+              <span class="kartu-layanan__gambar">
+                <img
+                  src="assets/img/kartu-langsing-w.jpg"
+                  alt="Perempuan langsing tersenyum mengukur pinggang di taman hijau"
+                  width="600"
+                  height="600"
+                  decoding="async"
+                />
+                <span class="kartu-layanan__lencana"
+                  ><svg class="ikon"><use href="#i-daun" /></svg
+                ></span>
+              </span>
+              <span class="kartu-layanan__teks"
+                ><span
+                  ><strong>Pola Hidup Sehat</strong
+                  ><small>Kebiasaan yang menjaga tubuh ideal</small></span
+                ><svg class="ikon"><use href="#i-panah" /></svg
+              ></span>
+            </a>
+          </nav>
+        </div>
+      </div>
+
+      <!-- ================= PITA BERJALAN ================= -->
+      <div class="pita" aria-label="Keunggulan layanan">
+        <div class="pita__jalur" data-gandakan>
+          <ul class="pita__isi">
+            <li class="pita__butir">
+              <svg class="ikon"><use href="#i-perisai" /></svg>Dokter berlisensi
+            </li>
+            <li class="pita__butir">
+              <svg class="ikon"><use href="#i-video" /></svg>100% online
+            </li>
+            <li class="pita__butir">
+              <svg class="ikon"><use href="#i-uang" /></svg>Biaya transparan
+            </li>
+            <li class="pita__butir">
+              <svg class="ikon"><use href="#i-obrol" /></svg>Pendampingan 24/7
+            </li>
+            <li class="pita__butir">
+              <svg class="ikon"><use href="#i-dokumen" /></svg>Resep sesuai
+              indikasi
+            </li>
+            <li class="pita__butir">
+              <svg class="ikon"><use href="#i-panah" /></svg>Dikirim ke rumah
+              Anda
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ================= PROGRAM BERAT BADAN ================= -->
+      <section class="bagian" id="berat-badan">
+        <div class="wadah">
+          <!-- Cek IMT -->
+          <div class="cek-imt" id="cek-imt" data-muncul>
+            <div>
+              <span class="eyebrow">Cek cepat</span>
+              <h3>Hitung Indeks Massa Tubuh Anda</h3>
+              <p class="cek-imt__teks">
+                IMT dihitung dari berat (kg) dibagi kuadrat tinggi badan (m).
+                Kategori mengikuti klasifikasi Asia-Pasifik yang dipakai di
+                Indonesia.
+              </p>
+              <div class="baris-bidang">
+                <div class="bidang">
+                  <label for="imt-tinggi">Tinggi badan</label>
+                  <div class="bidang__isian">
+                    <input
+                      id="imt-tinggi"
+                      type="number"
+                      inputmode="decimal"
+                      min="120"
+                      max="220"
+                      step="0.5"
+                      value="165"
+                    /><span>cm</span>
+                  </div>
+                </div>
+                <div class="bidang">
+                  <label for="imt-berat">Berat badan</label>
+                  <div class="bidang__isian">
+                    <input
+                      id="imt-berat"
+                      type="number"
+                      inputmode="decimal"
+                      min="30"
+                      max="250"
+                      step="0.1"
+                      value="75"
+                    /><span>kg</span>
+                  </div>
+                </div>
+              </div>
+              <button class="tombol tombol--utama cek-imt__tombol" type="button" id="imt-hitung">
+                Hitung IMT
+              </button>
+            </div>
+            <div class="hasil-imt" aria-live="polite">
+              <div class="hasil-imt__angka">
+                <strong id="imt-angka">27,5</strong><span>kg/m²</span>
+                <span
+                  class="pil-kategori"
+                  id="imt-kategori"
+                  data-tingkat="sedang"
+                  >Obesitas Tingkat I</span
+                >
+              </div>
+              <div class="skala-imt" aria-hidden="true">
+                <i id="imt-penanda" style="left: 50%"></i>
+              </div>
+              <div class="skala-imt__label" aria-hidden="true">
+                <span style="left: 14%">18,5</span
+                ><span style="left: 32%">23</span
+                ><span style="left: 40%">25</span
+                ><span style="left: 60%">30</span
+                ><span style="left: 80%">35</span>
+              </div>
+              <p class="hasil-imt__pesan" id="imt-pesan">
+                Rentang IMT normal untuk tinggi Anda sekitar 50,4–62,3 kg.
+                Selisih dengan berat saat ini sekitar 12,7 kg.
+              </p>
+              <p class="hasil-imt__kecil">
+                IMT adalah alat skrining awal, bukan diagnosis. Dokter Sp.GK
+                akan menilai komposisi tubuh, lingkar pinggang, dan kondisi
+                kesehatan Anda secara menyeluruh.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pop up saran IMT (dibuka oleh main.js) -->
+          <dialog class="saran-imt" id="saran-imt" aria-labelledby="saran-imt-judul">
+            <button class="saran-imt__tutup" type="button" aria-label="Tutup" data-tutup-saran>
+              <svg class="ikon"><use href="#i-silang" /></svg>
+            </button>
+            <p class="saran-imt__kategori" id="saran-imt-judul">
+              IMT Anda <strong id="saran-imt-angka">–</strong> ·
+              <span id="saran-imt-kategori">–</span>
+            </p>
+            <p class="saran-imt__risiko" id="saran-imt-risiko"></p>
+            <p class="saran-imt__teks">
+              Disarankan segera memulai program penurunan berat badan sebelum
+              terlambat.
+            </p>
+            <a class="tombol tombol--utama" href="mulai.html"
+              >Mulai konsultasi
+              <svg class="ikon"><use href="#i-panah" /></svg
+            ></a>
+          </dialog>
+
+          <div class="kisi-2 kisi-2--foto">
+            <div class="foto-akhir" data-muncul>
+              <figure class="bingkai bingkai--4-3">
+                <img
+                  src="assets/img/timbangan-w.jpg"
+                  alt="Timbangan digital di lantai kayu sebagai simbol pemantauan berat badan"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption class="bingkai__label">
+                  <svg class="ikon"><use href="#i-grafik" /></svg>Program yang
+                  dipantau dokter
+                </figcaption>
+              </figure>
+            </div>
+            <div data-muncul>
+              <span class="eyebrow">Program berat badan</span>
+              <h2 class="judul-bagian">
+                Turunkan berat badan dengan
+                <em>pelayanan dokter spesialis gizi klinik</em>
+              </h2>
+              <p class="teks-bagian">
+                Setiap orang memiliki kebutuhan yang berbeda. SLIMFie membantu
+                Anda menjalani program pengelolaan berat badan yang disesuaikan
+                dengan kondisi kesehatan, tujuan, dan gaya hidup, dengan
+                pendampingan langsung dari profesional.
+              </p>
+              <ul class="daftar-cek">
+                <li>
+                  <span class="tanda"
+                    ><svg class="ikon"><use href="#i-centang" /></svg></span
+                  >Evaluasi kondisi kesehatan dan riwayat berat badan
+                </li>
+                <li>
+                  <span class="tanda"
+                    ><svg class="ikon"><use href="#i-centang" /></svg></span
+                  >Rencana perawatan personal
+                </li>
+                <li>
+                  <span class="tanda"
+                    ><svg class="ikon"><use href="#i-centang" /></svg></span
+                  >Terapi obat hanya bila ada indikasi medis
+                </li>
+                <li>
+                  <span class="tanda"
+                    ><svg class="ikon"><use href="#i-centang" /></svg></span
+                  >Pemantauan berkala dan penyesuaian program
+                </li>
+              </ul>
+              <div class="kartu-dokter">
+                <span class="monogram" aria-hidden="true">GK</span>
+                <span
+                  ><strong>Spesialis gizi klinik</strong
+                  ><small
+                    >Setiap rencana ditinjau dan disetujui dokter Sp.GK
+                    berlisensi.</small
+                  ></span
+                >
+              </div>
+              <div class="aksi-baris">
+                <a class="tombol tombol--utama" href="#program"
+                  >Pelajari program
+                  <svg class="ikon"><use href="#i-panah" /></svg
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= CARA KERJA & BIAYA ================= -->
+      <section class="bagian bagian--lembut" id="program">
+        <div class="wadah">
+          <div class="kepala-bagian kepala-bagian--tengah" data-muncul>
+            <span class="eyebrow">Cara kerja program</span>
+            <h2 class="judul-bagian">
+              Sudah siap serius menurunkan berat badan?
+              <em>SLIMFie siap mendampingi Anda.</em>
+            </h2>
+            <p class="teks-bagian">
+              Tiga langkah dari evaluasi awal hingga pendampingan. Biaya
+              dijelaskan sejak awal, tanpa biaya tersembunyi.
+            </p>
+          </div>
+
+          <div class="program">
+            <ol class="langkah">
+              <li class="langkah__butir" data-muncul>
+                <span class="langkah__nomor">01</span>
+                <div>
+                  <h3>Mulai dengan evaluasi kesehatan</h3>
+                  <p>
+                    Ceritakan kondisi kesehatan, riwayat berat badan, kebiasaan
+                    sehari-hari, serta tujuan yang ingin Anda capai melalui
+                    evaluasi awal secara online.
+                  </p>
+                  <p>
+                    Informasi Anda akan ditinjau oleh tenaga medis yang
+                    berwenang untuk menilai kebutuhan, faktor risiko, dan
+                    pilihan program yang sesuai.
+                  </p>
+                </div>
+              </li>
+              <li class="langkah__butir" data-muncul>
+                <span class="langkah__nomor">02</span>
+                <div>
+                  <h3>Dapatkan rencana perawatan personal</h3>
+                  <p>
+                    Setelah evaluasi, dokter akan membahas rekomendasi yang
+                    sesuai dengan kondisi dan tujuan kesehatan Anda. Rencana
+                    dapat mencakup konsultasi medis, panduan gizi, perubahan
+                    gaya hidup, serta terapi obat apabila terdapat indikasi
+                    medis.
+                  </p>
+                  <p>
+                    Anda akan memperoleh penjelasan mengenai manfaat, risiko,
+                    alternatif, dan pemantauan yang diperlukan sebelum mengambil
+                    keputusan.
+                  </p>
+                </div>
+              </li>
+              <li class="langkah__butir" data-muncul>
+                <span class="langkah__nomor">03</span>
+                <div>
+                  <h3>Jalani program dengan pendampingan</h3>
+                  <p>
+                    Jalankan rencana yang telah disepakati bersama tenaga medis,
+                    dengan panduan pola makan, aktivitas fisik, dan kebiasaan
+                    sehari-hari.
+                  </p>
+                  <p>
+                    Jika obat diresepkan, pengadaan dan pengirimannya mengikuti
+                    resep, ketentuan yang berlaku, serta prosedur penyaluran
+                    obat yang sah.
+                  </p>
+                </div>
+              </li>
+            </ol>
+
+            <aside
+              class="kartu-harga"
+              data-muncul
+              aria-labelledby="judul-harga"
+            >
+              <span class="eyebrow">Konsultasi awal</span>
+              <h3 id="judul-harga">Mulai program dari</h3>
+              <p class="kartu-harga__angka">
+                Rp199.000 <small>per konsultasi dokter Sp.GK</small>
+              </p>
+              <p class="kartu-harga__teks">
+                Sudah termasuk evaluasi kesehatan, penentuan rencana, dan
+                penjadwalan konsultasi video bersama dokter spesialis gizi
+                klinik.
+              </p>
+              <ul class="daftar-cek">
+                <li>
+                  <span class="tanda"
+                    ><svg class="ikon"><use href="#i-centang" /></svg></span
+                  >Evaluasi awal dan skrining klinis
+                </li>
+                <li>
+                  <span class="tanda"
+                    ><svg class="ikon"><use href="#i-centang" /></svg></span
+                  >Konsultasi video dengan dokter Sp.GK
+                </li>
+                <li>
+                  <span class="tanda"
+                    ><svg class="ikon"><use href="#i-centang" /></svg></span
+                  >Rencana perawatan personal
+                </li>
+                <li>
+                  <span class="tanda"
+                    ><svg class="ikon"><use href="#i-centang" /></svg></span
+                  >Panduan gizi sesuai paket
+                </li>
+              </ul>
+              <a class="tombol tombol--putih tombol--lebar" href="mulai.html"
+                >Mulai konsultasi
+                <svg class="ikon"><use href="#i-panah" /></svg
+              ></a>
+              <p class="kartu-harga__catatan">
+                Biaya terapi atau obat, bila diindikasikan, diinformasikan
+                terpisah sebelum Anda menyetujui.
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= GIZI ================= -->
+      <section class="bagian" id="gizi">
+        <div class="wadah">
+          <div class="kisi-2">
+            <div data-muncul>
+              <span class="eyebrow">Gizi metabolik</span>
+              <h2 class="judul-bagian">
+                Bahan bakar untuk transformasi Anda,
+                <em>lindungi progresnya</em>
+              </h2>
+              <p class="teks-bagian">
+                Penurunan berat badan yang bertahan direncanakan dari makanan
+                sehari-hari yang masuk akal untuk dijalani.
+              </p>
+              <ul class="daftar-cek">
+                <li>
+                  <span class="tanda"
+                    ><svg class="ikon"><use href="#i-centang" /></svg></span
+                  >Porsi terukur tanpa harus menghitung kalori sendiri
+                </li>
+                <li>
+                  <span class="tanda"
+                    ><svg class="ikon"><use href="#i-centang" /></svg></span
+                  >Bahan makanan mudah ditemukan di pasar dan toko sekitar
+                </li>
+                <li>
+                  <span class="tanda"
+                    ><svg class="ikon"><use href="#i-centang" /></svg></span
+                  >Protein cukup untuk menjaga massa otot
+                </li>
+                <li>
+                  <span class="tanda"
+                    ><svg class="ikon"><use href="#i-centang" /></svg></span
+                  >Penyesuaian bila ada alergi atau pantangan
+                </li>
+                <li>
+                  <span class="tanda"
+                    ><svg class="ikon"><use href="#i-centang" /></svg></span
+                  >Panduan belanja dan persiapan makan mingguan
+                </li>
+              </ul>
+            </div>
+            <div class="komposisi-foto" data-muncul>
+              <figure class="bingkai bingkai--3-4 tinggi">
+                <img
+                  src="assets/img/mp-nutrisi.jpg"
+                  alt="Persiapan makan sehat dengan salad, buah, dan alat perencanaan menu"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption class="bingkai__label">
+                  <svg class="ikon"><use href="#i-mangkuk" /></svg>Meal plan
+                  disusun oleh dokter Sp.GK
+                </figcaption>
+              </figure>
+              <figure class="bingkai bingkai--1-1">
+                <img
+                  src="assets/img/salad.jpg"
+                  alt="Semangkuk salad quinoa dengan buah kering"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="bingkai bingkai--1-1">
+                <img
+                  src="assets/img/smoothie.jpg"
+                  alt="Smoothie bowl dengan granola dan buah segar"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= RESEP ================= -->
+      <section class="bagian bagian--krem" id="resep">
+        <div class="wadah kisi-2">
+          <div data-muncul>
+            <span class="eyebrow">Resep SLIMFie</span>
+            <h2 class="judul-bagian">
+              Resep dari dokter spesialis gizi klinik
+            </h2>
+            <p class="teks-bagian">
+              Resep SLIMFie adalah terapi yang diresepkan dokter spesialis gizi
+              klinik setelah evaluasi. Setiap resep mencantumkan jenis obat,
+              dosis, aturan pakai, dan jadwal pemantauan, lalu disiapkan melalui
+              jalur pelayanan kefarmasian yang sesuai dengan ketentuan di
+              Indonesia.
+            </p>
+            <ul class="daftar-cek">
+              <li>
+                <span class="tanda"
+                  ><svg class="ikon"><use href="#i-centang" /></svg></span
+                >Diresepkan hanya bila ada indikasi medis
+              </li>
+              <li>
+                <span class="tanda"
+                  ><svg class="ikon"><use href="#i-centang" /></svg></span
+                >Dosis dan aturan pakai tertulis jelas
+              </li>
+              <li>
+                <span class="tanda"
+                  ><svg class="ikon"><use href="#i-centang" /></svg></span
+                >Efek samping dan pemantauan dijelaskan
+              </li>
+              <li>
+                <span class="tanda"
+                  ><svg class="ikon"><use href="#i-centang" /></svg></span
+                >Disiapkan apoteker, dikirim ke alamat Anda
+              </li>
+            </ul>
+            <div class="kotak-info">
+              <svg class="ikon"><use href="#i-perisai" /></svg>
+              <span
+                >Obat tidak dikirim sebelum resep diverifikasi dan pembayaran
+                program dikonfirmasi.</span
+              >
+            </div>
+          </div>
+          <div data-muncul style="display: grid; place-items: center">
+            <figure
+              class="bingkai bingkai--1-1"
+              style="width: 100%; max-width: 460px"
+            >
+              <img
+                src="assets/img/kartu-resep-hijau.jpg"
+                alt="Botol obat resep dengan latar tanaman hijau"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="bingkai__label">
+                <svg class="ikon"><use href="#i-dokumen" /></svg>Resep dokter
+                Sp.GK
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= POLA HIDUP ================= -->
+      <section class="bagian" id="pola-hidup">
+        <div class="wadah">
+          <div class="kisi-2 kisi-2--foto">
+            <div data-muncul>
+              <span class="eyebrow">Pola hidup sehat</span>
+              <h2 class="judul-bagian">
+                Kebiasaan kecil yang <em>menjaga hasil</em>
+              </h2>
+              <p class="teks-bagian">
+                Berat badan dipengaruhi banyak hal: pola makan, aktivitas fisik,
+                tidur, kondisi kesehatan, lingkungan, dan faktor biologis.
+                Karena itu program disusun bersama Anda, bukan dipaksakan pada
+                Anda.
+              </p>
+              <div class="kisi-kecil">
+                <article class="kartu kartu--lembut">
+                  <div class="kartu__ikon">
+                    <svg class="ikon"><use href="#i-aktivitas" /></svg>
+                  </div>
+                  <h3 class="kartu__judul">Aktivitas fisik</h3>
+                  <p class="kartu__teks">
+                    Target gerak yang realistis, disesuaikan kemampuan awal.
+                  </p>
+                </article>
+                <article class="kartu kartu--lembut">
+                  <div class="kartu__ikon">
+                    <svg class="ikon"><use href="#i-bulan" /></svg>
+                  </div>
+                  <h3 class="kartu__judul">Kualitas tidur</h3>
+                  <p class="kartu__teks">
+                    Tidur cukup membantu mengatur nafsu makan dan energi.
+                  </p>
+                </article>
+                <article class="kartu kartu--lembut">
+                  <div class="kartu__ikon">
+                    <svg class="ikon"><use href="#i-tetes" /></svg>
+                  </div>
+                  <h3 class="kartu__judul">Hidrasi</h3>
+                  <p class="kartu__teks">
+                    Cairan cukup, tanpa minuman berpemanis tambahan.
+                  </p>
+                </article>
+                <article class="kartu kartu--lembut">
+                  <div class="kartu__ikon">
+                    <svg class="ikon"><use href="#i-hati" /></svg>
+                  </div>
+                  <h3 class="kartu__judul">Manajemen stres</h3>
+                  <p class="kartu__teks">
+                    Polanya dikenali, lalu dibantu dengan langkah konkret.
+                  </p>
+                </article>
+              </div>
+            </div>
+            <div data-muncul>
+              <figure class="bingkai bingkai--4-5">
+                <img
+                  src="assets/img/hidrasi.jpg"
+                  alt="Perempuan dalam pakaian olahraga meminum air setelah berolahraga"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption class="bingkai__label">
+                  <svg class="ikon"><use href="#i-tetes" /></svg>Didampingi,
+                  bukan dilarang
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= CATATAN MEDIS ================= -->
+      <section class="bagian bagian--lembut" id="catatan-medis">
+        <div class="wadah">
+          <div class="catatan-medis" data-muncul>
+            <div>
+              <span class="eyebrow">Ketentuan layanan</span>
+              <h2>Catatan medis dan ketentuan layanan</h2>
+              <p class="teks-bagian">
+                SLIMFie menggunakan penjelasan mengenai resep, penyedia layanan,
+                dan status persetujuan obat di Indonesia.
+              </p>
+            </div>
+            <div class="catatan-medis__isi">
+              <p class="catatan-medis__label">
+                Informasi penting mengenai terapi medis
+              </p>
+              <p>
+                Obat hanya diberikan apabila terdapat indikasi medis dan setelah
+                evaluasi serta konsultasi dengan dokter yang berwenang. Jenis
+                terapi, manfaat, risiko, efek samping, dan kebutuhan pemantauan
+                akan dijelaskan.
+              </p>
+              <p>
+                Pemenuhan resep dilakukan melalui jalur pelayanan kefarmasian
+                yang sesuai dengan ketentuan yang berlaku di Indonesia.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= TESTIMONI ================= -->
+      <section class="bagian" id="testimoni" style="padding-bottom: 88px">
+        <div class="wadah">
+          <div
+            class="kepala-bagian kepala-bagian--tengah"
+            data-muncul
+            style="margin-bottom: 44px"
+          >
+            <span class="eyebrow">Mereka yang memilih SLIMFie</span>
+            <h2 class="judul-bagian">
+              Cerita sehat dimulai dari langkah pertama
+            </h2>
+            <p class="teks-bagian">
+              Bergabunglah dengan orang-orang yang memilih pendekatan lebih
+              personal untuk mengelola berat badan. Temukan dukungan medis dan
+              pendampingan yang membantu Anda membangun kebiasaan sehat sesuai
+              kondisi dan tujuan Anda.
+            </p>
+          </div>
+        </div>
+
+        <div class="testimoni">
+          <div class="testimoni__baris" data-gandakan>
+            <div class="testimoni__isi">
+              <figure class="testimoni__kartu">
+                <blockquote>
+                  “Awalnya cuma ingin turun 5 kg. Yang saya dapat justru cara
+                  makan yang benar-benar bisa saya jalani jangka panjang.”
+                </blockquote>
+                <figcaption class="testimoni__kaki">
+                  <span class="testimoni__orang"
+                    ><span class="monogram" aria-hidden="true">N</span
+                    ><span
+                      ><strong>Nadia R.</strong><small>Jakarta</small></span
+                    ></span
+                  ><span class="testimoni__hasil">−6,4 kg · 12 minggu</span>
+                </figcaption>
+              </figure>
+              <figure class="testimoni__kartu">
+                <blockquote>
+                  “Saya suka karena semuanya dijelaskan, termasuk risikonya.
+                  Tidak ada janji manis yang tidak masuk akal.”
+                </blockquote>
+                <figcaption class="testimoni__kaki">
+                  <span class="testimoni__orang"
+                    ><span class="monogram" aria-hidden="true">D</span
+                    ><span
+                      ><strong>Dimas P.</strong><small>Surabaya</small></span
+                    ></span
+                  ><span class="testimoni__hasil">−9 kg · 16 minggu</span>
+                </figcaption>
+              </figure>
+              <figure class="testimoni__kartu testimoni__foto">
+                <img
+                  src="assets/img/testimoni-1.jpg"
+                  alt="Perempuan berkaos pink tersenyum"
+                  width="720"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="testimoni__kartu">
+                <blockquote>
+                  “Konsultasinya online, tapi rasanya lebih teliti daripada
+                  kontrol rutin yang biasa saya jalani.”
+                </blockquote>
+                <figcaption class="testimoni__kaki">
+                  <span class="testimoni__orang"
+                    ><span class="monogram" aria-hidden="true">R</span
+                    ><span
+                      ><strong>Ratna S.</strong><small>Bandung</small></span
+                    ></span
+                  ><span class="testimoni__hasil">−6 kg · 10 minggu</span>
+                </figcaption>
+              </figure>
+              <figure class="testimoni__kartu">
+                <blockquote>
+                  “Jadwal saya padat. Evaluasi awal cuma beberapa menit, sisanya
+                  pendampingan lewat pesan dengan tim.”
+                </blockquote>
+                <figcaption class="testimoni__kaki">
+                  <span class="testimoni__orang"
+                    ><span class="monogram" aria-hidden="true">Y</span
+                    ><span
+                      ><strong>Yusuf A.</strong><small>Medan</small></span
+                    ></span
+                  ><span class="testimoni__hasil">−9,2 kg · 14 minggu</span>
+                </figcaption>
+              </figure>
+              <figure class="testimoni__kartu">
+                <blockquote>
+                  “Yang berubah bukan cuma angka timbangan, tapi kualitas tidur
+                  dan energi saya di siang hari.”
+                </blockquote>
+                <figcaption class="testimoni__kaki">
+                  <span class="testimoni__orang"
+                    ><span class="monogram" aria-hidden="true">C</span
+                    ><span
+                      ><strong>Clara W.</strong><small>Semarang</small></span
+                    ></span
+                  ><span class="testimoni__hasil">−5,8 kg · 9 minggu</span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="testimoni__baris testimoni__baris--balik" data-gandakan>
+            <div class="testimoni__isi">
+              <figure class="testimoni__kartu">
+                <blockquote>
+                  “Dokter menunda terapi karena tekanan darah saya tinggi.
+                  Justru itu yang membuat saya percaya.”
+                </blockquote>
+                <figcaption class="testimoni__kaki">
+                  <span class="testimoni__orang"
+                    ><span class="monogram" aria-hidden="true">A</span
+                    ><span
+                      ><strong>Andi M.</strong><small>Makassar</small></span
+                    ></span
+                  ><span class="testimoni__hasil">−8 kg · 13 minggu</span>
+                </figcaption>
+              </figure>
+              <figure class="testimoni__kartu">
+                <blockquote>
+                  “Tiga bulan berjalan tanpa saya merasa sedang menjalani diet
+                  yang menyiksa.”
+                </blockquote>
+                <figcaption class="testimoni__kaki">
+                  <span class="testimoni__orang"
+                    ><span class="monogram" aria-hidden="true">F</span
+                    ><span
+                      ><strong>Fitri H.</strong><small>Yogyakarta</small></span
+                    ></span
+                  ><span class="testimoni__hasil">−8 kg · 12 minggu</span>
+                </figcaption>
+              </figure>
+              <figure class="testimoni__kartu testimoni__foto">
+                <img
+                  src="assets/img/testimoni-2.jpg"
+                  alt="Perempuan berkaos putih tertawa lebar"
+                  width="720"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="testimoni__kartu">
+                <blockquote>
+                  “Biayanya jelas sejak awal. Tidak ada tagihan tambahan di
+                  tengah program.”
+                </blockquote>
+                <figcaption class="testimoni__kaki">
+                  <span class="testimoni__orang"
+                    ><span class="monogram" aria-hidden="true">B</span
+                    ><span
+                      ><strong>Bagas S.</strong><small>Bekasi</small></span
+                    ></span
+                  ><span class="testimoni__hasil">−9,5 kg · 15 minggu</span>
+                </figcaption>
+              </figure>
+              <figure class="testimoni__kartu">
+                <blockquote>
+                  “Panduan makannya memakai bahan yang ada di pasar dekat rumah.
+                  Itu yang membuat saya bertahan.”
+                </blockquote>
+                <figcaption class="testimoni__kaki">
+                  <span class="testimoni__orang"
+                    ><span class="monogram" aria-hidden="true">M</span
+                    ><span
+                      ><strong>Melati D.</strong><small>Denpasar</small></span
+                    ></span
+                  ><span class="testimoni__hasil">−4,6 kg · 8 minggu</span>
+                </figcaption>
+              </figure>
+              <figure class="testimoni__kartu">
+                <blockquote>
+                  “Pendampingannya yang membuat saya tidak berhenti. Tiap minggu
+                  ada yang menanyakan progres.”
+                </blockquote>
+                <figcaption class="testimoni__kaki">
+                  <span class="testimoni__orang"
+                    ><span class="monogram" aria-hidden="true">R</span
+                    ><span
+                      ><strong>Rizky F.</strong><small>Balikpapan</small></span
+                    ></span
+                  ><span class="testimoni__hasil">−12 kg · 18 minggu</span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div class="wadah">
+          <p class="testimoni__catatan">
+            Testimoni bersifat ilustratif. Hasil setiap orang berbeda dan
+            dipengaruhi kondisi medis, kepatuhan menjalani program, serta faktor
+            lain.
+          </p>
+        </div>
+      </section>
+
+      <!-- ================= CTA ================= -->
+      <section class="bagian bagian--rapat" style="padding-top: 0">
+        <div class="wadah">
+          <div class="pita-cta" data-muncul>
+            <span class="eyebrow">Mulai hari ini</span>
+            <h2 class="judul-bagian">
+              Mulai perjalanan menuju berat badan ideal bersama SLIMFie
+            </h2>
+            <p class="pita-cta__teks">Satu langkah kecil hari ini.</p>
+            <div class="pita-cta__aksi">
+              <a class="tombol tombol--putih" href="mulai.html"
+                >Mulai konsultasi
+                <svg class="ikon"><use href="#i-panah" /></svg
+              ></a>
+              <a class="tombol tombol--garis" href="#program"
+                >Pelajari program</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= FAQ ================= -->
+      <section class="bagian bagian--lembut" id="faq">
+        <div class="wadah">
+          <div class="kepala-bagian kepala-bagian--tengah" data-muncul>
+            <span class="eyebrow">Pertanyaan umum</span>
+            <h2 class="judul-bagian">Yang sering ditanyakan sebelum mulai</h2>
+          </div>
+          <div class="faq">
+            <details data-muncul open>
+              <summary>
+                Berapa biaya konsultasi awal?<svg class="ikon">
+                  <use href="#i-plus" />
+                </svg>
+              </summary>
+              <p class="faq__isi">
+                Rp199.000 per konsultasi dokter Sp.GK. Biaya ini sudah termasuk
+                evaluasi kesehatan, penentuan rencana, dan penjadwalan
+                konsultasi video. Biaya terapi atau obat, bila diindikasikan,
+                diinformasikan terpisah sebelum Anda menyetujui.
+              </p>
+            </details>
+            <details data-muncul>
+              <summary>
+                Apakah saya pasti mendapat obat?<svg class="ikon">
+                  <use href="#i-plus" />
+                </svg>
+              </summary>
+              <p class="faq__isi">
+                Tidak. Obat hanya diberikan apabila terdapat indikasi medis
+                setelah evaluasi dan konsultasi dengan dokter yang berwenang.
+                Banyak program cukup dengan panduan gizi dan perubahan gaya
+                hidup.
+              </p>
+            </details>
+            <details data-muncul>
+              <summary>
+                Bagaimana konsultasi dengan dokter dilakukan?<svg class="ikon">
+                  <use href="#i-plus" />
+                </svg>
+              </summary>
+              <p class="faq__isi">
+                Konsultasi berlangsung lewat video call Google Meet. Setelah
+                pembayaran lunas, Anda memilih jadwal di dashboard pasien. Dua
+                dokter Sp.GK bergantian berpraktik Senin–Sabtu pukul 08.00–11.30
+                dan 13.30–17.30 WIB, 20 menit per sesi. Setelah dokter menyetujui
+                jadwal Anda, tautan video muncul di dashboard.
+              </p>
+            </details>
+            <details data-muncul>
+              <summary>
+                Bagaimana obat resep dikirim?<svg class="ikon">
+                  <use href="#i-plus" />
+                </svg>
+              </summary>
+              <p class="faq__isi">
+                Setelah resep diverifikasi dan pembayaran dikonfirmasi, obat
+                disiapkan apoteker dan dikirim ke alamat Anda melalui kurir.
+                Anda menerima nomor resi untuk melacak pengiriman.
+              </p>
+            </details>
+            <details data-muncul>
+              <summary>
+                Apakah semua orang bisa mengikuti program?<svg class="ikon">
+                  <use href="#i-plus" />
+                </svg>
+              </summary>
+              <p class="faq__isi">
+                Evaluasi awal mencakup skrining klinis. Beberapa kondisi,
+                misalnya penyakit ginjal berat, riwayat pankreatitis, atau
+                gangguan makan, memerlukan penilaian khusus atau persetujuan
+                dokter utama Anda sebelum program dimulai.
+              </p>
+            </details>
+            <details data-muncul>
+              <summary>
+                Apakah SLIMFie melayani keadaan darurat?<svg class="ikon">
+                  <use href="#i-plus" />
+                </svg>
+              </summary>
+              <p class="faq__isi">
+                Tidak. SLIMFie bukan layanan gawat darurat. Untuk keluhan akut,
+                segera hubungi fasilitas kesehatan terdekat.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= KONTAK ================= -->
+      <section class="bagian" id="kontak">
+        <div class="wadah">
+          <div class="kepala-bagian kepala-bagian--tengah" data-muncul>
+            <span class="eyebrow">Kontak</span>
+            <h2 class="judul-bagian">
+              Butuh bantuan? <em>Tim SLIMFie siap membantu.</em>
+            </h2>
+            <p class="teks-bagian">
+              Pertanyaan tentang program, jadwal konsultasi, pembayaran, atau
+              tindak lanjut dapat dikirim melalui email. Kami membalas pada hari
+              yang sama, termasuk akhir pekan.
+            </p>
+          </div>
+
+          <div class="kontak-kisi">
+            <article class="kontak-kartu" data-muncul>
+              <span class="kontak-kartu__ikon"
+                ><svg class="ikon"><use href="#i-surel" /></svg
+              ></span>
+              <h3>Email</h3>
+              <p>
+                Jalur utama untuk pertanyaan program dan tindak lanjut medis.
+              </p>
+              <a class="kontak-nilai" href="mailto:cs@slimfie.com"
+                >cs@slimfie.com</a
+              >
+              <a
+                class="tombol tombol--garis-gelap tombol--kecil"
+                href="mailto:cs@slimfie.com?subject=Pertanyaan%20program%20SLIMFie"
+                >Kirim email</a
+              >
+            </article>
+
+            <article class="kontak-kartu" data-muncul>
+              <span class="kontak-kartu__ikon"
+                ><svg class="ikon"><use href="#i-kalender" /></svg
+              ></span>
+              <h3>Jadwalkan konsultasi</h3>
+              <p>
+                Isi evaluasi singkat, selesaikan pembayaran, lalu pilih jadwal
+                konsultasi video bersama dokter Sp.GK.
+              </p>
+              <a class="kontak-nilai" href="mulai.html"
+                >Evaluasi awal 3–5 menit</a
+              >
+              <a class="tombol tombol--utama tombol--kecil" href="mulai.html"
+                >Mulai konsultasi <svg class="ikon"><use href="#i-panah" /></svg
+              ></a>
+            </article>
+
+            <article class="kontak-kartu" data-muncul>
+              <span class="kontak-kartu__ikon"
+                ><svg class="ikon"><use href="#i-perisai" /></svg
+              ></span>
+              <h3>Privasi data terjaga</h3>
+              <p>
+                Data kesehatan Anda bersifat rahasia dan hanya diakses dokter.
+              </p>
+              <p class="kontak-kecil">Bukan layanan gawat darurat.</p>
+            </article>
+          </div>
+
+          <div class="kontak-pita" data-muncul>
+            <div>
+              <strong>Dokter Spesialis Gizi Klinik</strong>
+              <p>Penanggung jawab layanan medis SLIMFie.</p>
+            </div>
+            <a class="tombol tombol--utama tombol--kecil" href="mulai.html"
+              >Mulai konsultasi <svg class="ikon"><use href="#i-panah" /></svg
+            ></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= KAKI ================= -->
+    <footer class="kaki">
+      <div class="wadah">
+        <div class="kaki__isi">
+          <div class="kaki__merek">
+            <a class="merek merek--kaki" href="#beranda"
+              ><img
+                src="assets/favicon.svg"
+                alt=""
+                width="30"
+                height="30"
+              />SLIMFie</a
+            >
+            <p>
+              Pendampingan dokter spesialis gizi klinik untuk pengelolaan berat
+              badan yang aman dan terarah.
+            </p>
+            <p class="kaki__bantuan">Butuh bantuan?</p>
+            <a class="kaki__surel" href="mailto:cs@slimfie.com"
+              >cs@slimfie.com</a
+            >
+          </div>
+          <div class="kaki__kolom">
+            <h3>Program</h3>
+            <a href="#berat-badan">Program berat badan</a>
+            <a href="#gizi">Makan bergizi</a>
+            <a href="#resep">Resep SLIMFie</a>
+            <a href="#pola-hidup">Pola hidup sehat</a>
+          </div>
+          <div class="kaki__kolom">
+            <h3>Layanan</h3>
+            <a href="#program">Cara kerja &amp; biaya</a>
+            <a href="#cek-imt">Cek IMT</a>
+            <a href="#testimoni">Testimoni</a>
+            <a href="#faq">Pertanyaan umum</a>
+          </div>
+          <div class="kaki__kolom">
+            <h3>Kontak &amp; ketentuan</h3>
+            <a href="#kontak">Hubungi kami</a>
+            <a href="#catatan-medis">Catatan medis</a>
+            <a href="mailto:cs@slimfie.com">cs@slimfie.com</a>
+          </div>
+        </div>
+
+        <details class="kaki__kredit">
+          <summary>Kredit foto (Wikimedia Commons)</summary>
+          <ul>
+            <li>
+              Timbangan: franchise opportunities · CC BY-SA 2.0 ·
+              <a
+                href="https://commons.wikimedia.org/wiki/File:Fitness_digital_scale_weight_loss_(33837094584).jpg"
+                target="_blank"
+                rel="noopener"
+                >sumber</a
+              >
+            </li>
+            <li>
+              Kartu berat badan: Lifeislargerinfilm · CC BY-SA 4.0 ·
+              <a
+                href="https://commons.wikimedia.org/wiki/File:Plus_Sized_Super_Model_Anta_-_2016.jpg"
+                target="_blank"
+                rel="noopener"
+                >sumber</a
+              >
+            </li>
+            <li>
+              Kartu gizi: Shixart1985 · CC BY 2.0 ·
+              <a
+                href="https://commons.wikimedia.org/wiki/File:Fresh_salad_preparation_with_vibrant_greens_and_edible_flowers_in_a_stylish_bowl_during_a_culinary_experience.jpg"
+                target="_blank"
+                rel="noopener"
+                >sumber</a
+              >
+            </li>
+            <li>
+              Meal prep: Shixart1985 · CC BY 2.0 ·
+              <a
+                href="https://commons.wikimedia.org/wiki/File:Healthy_meal_prep_with_fresh_salad,_fruits,_and_planning_tools_displayed_on_a_table.jpg"
+                target="_blank"
+                rel="noopener"
+                >sumber</a
+              >
+            </li>
+            <li>
+              Salad quinoa: TorbeyCharbel · CC BY 4.0 ·
+              <a
+                href="https://commons.wikimedia.org/wiki/File:Healthy_quinoa_salad_with_dried_fruit.jpg"
+                target="_blank"
+                rel="noopener"
+                >sumber</a
+              >
+            </li>
+            <li>
+              Smoothie bowl: Ben Neale · CC0 ·
+              <a
+                href="https://commons.wikimedia.org/wiki/File:Smoothie_bowlin_(Unsplash).jpg"
+                target="_blank"
+                rel="noopener"
+                >sumber</a
+              >
+            </li>
+            <li>
+              Hidrasi: Shixart1985 · CC BY 2.0 ·
+              <a
+                href="https://commons.wikimedia.org/wiki/File:Woman_drinks_water_in_a_fitness_outfit_in_her_home_after_a_workout_session.jpg"
+                target="_blank"
+                rel="noopener"
+                >sumber</a
+              >
+            </li>
+            <li>
+              Foto dipotong ulang agar sesuai tata letak; potongan mengikuti
+              lisensi berkas asalnya.
+            </li>
+          </ul>
+        </details>
+
+        <div class="kaki__bawah">
+          <p class="kaki__hak">&copy; HERIK OKTA JONANDA 2026</p>
+          <p class="kaki__kecil">
+            SLIMFie bukan layanan gawat darurat. Untuk keluhan akut, hubungi
+            fasilitas kesehatan terdekat. Obat hanya diberikan apabila terdapat
+            indikasi medis setelah evaluasi dokter berlisensi.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ================= WHATSAPP MENGAMBANG ================= -->
+    <div class="agen">
+      <a
+        class="wa-mengambang"
+        href="https://wa.me/6282373400330?text=Halo%20SLIMFie%2C%20saya%20ingin%20bertanya%20tentang%20konsultasi%20gizi"
+        target="_blank"
+        rel="noopener"
+        aria-label="SLIMFie Assistant, chat admin via WhatsApp"
+      >
+        <svg class="ikon" aria-hidden="true"><use href="#i-wa" /></svg>
+        <span class="wa-mengambang__teks">
+          <strong>SLIMFie Assistant</strong>
+          <small>Chat via WhatsApp</small>
+        </span>
+      </a>
+    </div>
+  </body>
+</html>

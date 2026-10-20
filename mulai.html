@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Evaluasi SLIMFie</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Isi evaluasi kesehatan awal SLIMFie: perhitungan BMI, proyeksi berat badan 3 bulan, dan skrining data klinis sebelum konsultasi dokter Sp.GK.">
+<meta name="theme-color" content="#05372D">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/mulai.css">
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/mulai.js" defer></script>
+</head>
+<body class="hal-alur">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-panah" viewBox="0 0 24 24"><path d="M4.5 12h14M13 6.5l5.5 5.5-5.5 5.5"/></symbol>
+  <symbol id="i-kiri" viewBox="0 0 24 24"><path d="M19.5 12h-14M11 6.5 5.5 12l5.5 5.5"/></symbol>
+  <symbol id="i-centang" viewBox="0 0 24 24"><path d="M20 6.5 9.5 17 4 11.5"/></symbol>
+  <symbol id="i-orang" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.8 20.2a7.4 7.4 0 0 1 14.4 0"/></symbol>
+  <symbol id="i-grafik" viewBox="0 0 24 24"><path d="M4 19.5h16M6.5 16l3.8-4.8 3 2.8 4.6-6.4"/></symbol>
+  <symbol id="i-perisai" viewBox="0 0 24 24"><path d="M12 3.2 20 6v6.2c0 5-3.6 8.2-8 9.4-4.4-1.2-8-4.4-8-9.4V6l8-2.8Z"/><path d="m8.8 12 2.3 2.3 4.2-4.4"/></symbol>
+  <symbol id="i-jam" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 1.8"/></symbol>
+  <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6.5" width="12.5" height="11" rx="2.5"/><path d="M15.5 11 21 7.8v8.4L15.5 13"/></symbol>
+  <symbol id="i-uang" viewBox="0 0 24 24"><rect x="3" y="6.5" width="18" height="11" rx="2.5"/><circle cx="12" cy="12" r="2.4"/></symbol>
+  <symbol id="i-surel" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="m3.8 7.5 8.2 6 8.2-6"/></symbol>
+  <symbol id="i-dokumen" viewBox="0 0 24 24"><path d="M6 3.5h7l5 5v12H6z"/><path d="M13 3.5v5h5M9 13h6M9 16.5h6"/></symbol>
+</svg>
+
+<a class="lewati" href="#utama">Lewati ke konten</a>
+
+<header class="nav nav--melekat" data-nav data-nav-tetap>
+  <div class="wadah nav__isi">
+    <a class="merek" href="index.html" aria-label="SLIMFie, ke beranda">
+      <img src="assets/favicon.svg" alt="" width="30" height="30">SLIMFie
+    </a>
+    <nav class="nav__pil" id="nav-tautan" data-nav-tautan aria-label="Navigasi utama">
+      <a href="index.html">Beranda</a>
+      <a href="index.html#program">Program</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#kontak">Kontak</a>
+      <a href="masuk.html" data-tautan-masuk>Masuk</a>
+      <a class="nav__cta-pil" href="index.html#kontak">Butuh bantuan?</a>
+    </nav>
+    <div class="nav__aksi">
+      <button class="nav__tombol" type="button" data-nav-tombol aria-controls="nav-tautan" aria-expanded="false" aria-label="Buka menu">
+        <span class="nav__garis"></span><span class="nav__garis"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="utama">
+<section class="alur">
+  <div class="wadah alur__wadah">
+    <div class="alur__kepala">
+      <span class="eyebrow">Mulai konsultasi</span>
+      <h1>Evaluasi kesehatan awal</h1>
+      <p>Isi dalam 3–5 menit. Hasilnya ditinjau dokter spesialis gizi klinik.</p>
+      <div class="alur__progres">
+        <span id="label-langkah">Langkah 1 dari 7</span>
+        <div class="alur__batang"><i id="batang-progres" style="width:14.3%"></i></div>
+      </div>
+    </div>
+
+    <form class="kartu-alur" id="form-alur" novalidate>
+
+      <!-- 1 — Data tubuh & BMI -->
+      <div class="langkah-alur langkah-alur--tampil" data-langkah="1" data-judul="Data tubuh">
+        <span class="kartu-alur__langkah">Data tubuh</span>
+        <h2 class="kartu-alur__judul">Berapa berat badan dan tinggi badan Anda?</h2>
+        <p class="kartu-alur__teks">Perhitungan BMI di sini hanya data klinis untuk membantu dokter menilai kondisi awal Anda. Ini bukan diagnosis dan bukan penilaian kelayakan program.</p>
+        <div class="kartu-alur__isi">
+          <div class="bidang">
+            <span class="bidang__label" id="label-gender">Jenis kelamin</span>
+            <div class="pilihan-besar" role="radiogroup" aria-labelledby="label-gender">
+              <label><svg class="ikon"><use href="#i-orang"/></svg><input type="radio" name="gender" value="Perempuan"> Perempuan</label>
+              <label><svg class="ikon"><use href="#i-orang"/></svg><input type="radio" name="gender" value="Laki-laki"> Laki-laki</label>
+            </div>
+          </div>
+          <div class="baris-bidang">
+            <div class="bidang">
+              <label for="tinggi">Tinggi badan (cm)</label>
+              <input class="isian" type="number" id="tinggi" name="tinggi" inputmode="decimal" min="120" max="230" step="0.1" placeholder="mis. 162">
+            </div>
+            <div class="bidang">
+              <label for="berat">Berat badan saat ini (kg)</label>
+              <input class="isian" type="number" id="berat" name="berat" inputmode="decimal" min="35" max="300" step="0.1" placeholder="mis. 78,5">
+            </div>
+          </div>
+          <div class="hitung">
+            <button class="tombol tombol--utama" type="button" id="tombol-bmi">Hitung BMI <svg class="ikon"><use href="#i-grafik"/></svg></button>
+            <span>Rumus: berat (kg) ÷ tinggi (m)²</span>
+          </div>
+
+          <div class="hasil-bmi" id="hasil-bmi" aria-live="polite" hidden>
+            <div class="hasil-imt__angka">
+              <strong id="bmi-angka">–</strong><span>kg/m²</span>
+              <span class="pil-kategori" id="bmi-kategori">–</span>
+            </div>
+            <div class="skala-imt" aria-hidden="true"><i id="bmi-penanda" style="left:0%"></i></div>
+            <div class="skala-imt__label" aria-hidden="true">
+              <span style="left:14%">18,5</span><span style="left:32%">23</span><span style="left:40%">25</span><span style="left:60%">30</span><span style="left:80%">35</span>
+            </div>
+            <p class="hasil-bmi__catatan" id="bmi-catatan"></p>
+
+            <div class="bidang">
+              <label for="target">Berapa berat badan yang ingin Anda capai? (kg)</label>
+              <input class="isian" type="number" id="target" name="target" inputmode="decimal" min="30" max="300" step="0.1" placeholder="mis. 68">
+              <small>Target yang aman umumnya menurunkan 0,5–1 kg per minggu.</small>
+            </div>
+
+            <div class="grafik" id="grafik-proyeksi" hidden>
+              <strong>Proyeksi 3 bulan</strong>
+              <p id="proyeksi-teks"></p>
+              <div class="grafik__svg" id="grafik-svg"></div>
+              <div class="grafik__legenda">
+                <span><i></i>Perkiraan penurunan Anda</span>
+                <span><i class="pita-zona"></i>Rentang aman 0,5–1 kg/minggu</span>
+                <span><i class="garis-putus"></i>Berat target</span>
+              </div>
+            </div>
+          </div>
+          <p class="galat" data-galat="1" role="alert"></p>
+        </div>
+      </div>
+
+      <!-- 2 — Skrining klinis -->
+      <div class="langkah-alur" data-langkah="2" data-judul="Skrining klinis">
+        <span class="kartu-alur__langkah">Skrining klinis</span>
+        <h2 class="kartu-alur__judul">Langkah selanjutnya adalah skrining data klinis</h2>
+        <p class="kartu-alur__teks">Apakah ada dari hal berikut yang berlaku untuk Anda? Pilih semua yang sesuai. Dokter menggunakan informasi ini untuk memastikan rencana Anda aman dan tepat.</p>
+        <div class="kartu-alur__isi">
+          <label class="cek-baris cek-baris--khusus">
+            <input type="checkbox" name="skrining" value="Tidak ada dari pilihan di bawah ini" data-kosong="skrining">
+            <span>Tidak ada dari pilihan di bawah ini</span>
+          </label>
+          <div data-kelompok="skrining"></div>
+          <p class="galat" data-galat="2" role="alert"></p>
+          <div class="kotak-info">
+            <svg class="ikon"><use href="#i-perisai"/></svg>
+            <span>Jawaban Anda bersifat rahasia dan hanya digunakan oleh dokter yang menangani untuk menilai keamanan program.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 — Izin dokter utama -->
+      <div class="langkah-alur" data-langkah="3" data-judul="Izin dokter utama">
+        <span class="kartu-alur__langkah">Izin dokter utama</span>
+        <h2 class="kartu-alur__judul">Hal-hal yang memerlukan persetujuan dokter utama</h2>
+        <p class="kartu-alur__teks">Poin berikut mungkin memerlukan izin dari dokter keluarga atau dokter utama Anda sebelum resep dapat diberikan.</p>
+        <div class="kartu-alur__isi">
+          <label class="cek-baris cek-baris--khusus">
+            <input type="checkbox" name="izin" value="Tidak ada dari pilihan di bawah ini" data-kosong="izin">
+            <span>Tidak ada dari pilihan di bawah ini</span>
+          </label>
+          <div data-kelompok="izin"></div>
+          <p class="galat" data-galat="3" role="alert"></p>
+        </div>
+      </div>
+
+      <!-- 4 — Obat, alergi, suplemen -->
+      <div class="langkah-alur" data-langkah="4" data-judul="Obat & alergi">
+        <span class="kartu-alur__langkah">Obat &amp; alergi</span>
+        <h2 class="kartu-alur__judul">Obat, alergi, dan suplemen</h2>
+        <p class="kartu-alur__teks">Informasi ini membantu dokter menghindari interaksi obat dan memilih terapi yang aman.</p>
+        <div class="kartu-alur__isi">
+          <div class="bidang">
+            <label for="obat">Apakah saat ini ada konsumsi obat?</label>
+            <textarea class="area" id="obat" name="obat" placeholder="Nama obat, dosis, dan sejak kapan dikonsumsi. Tulis “tidak ada” bila tidak ada."></textarea>
+          </div>
+          <div class="bidang">
+            <label for="alergi">Apakah Anda punya riwayat alergi?</label>
+            <textarea class="area" id="alergi" name="alergi" placeholder="Alergi obat, makanan, atau lainnya. Tulis “tidak ada” bila tidak ada."></textarea>
+          </div>
+          <div class="bidang">
+            <label for="suplemen">Apakah Anda konsumsi suplemen atau vitamin? (opsional)</label>
+            <textarea class="area" id="suplemen" name="suplemen" placeholder="Nama produk dan dosis. Tulis “tidak ada” bila tidak ada."></textarea>
+          </div>
+          <p class="galat" data-galat="4" role="alert"></p>
+        </div>
+      </div>
+
+      <!-- 5 — Prioritas -->
+      <div class="langkah-alur" data-langkah="5" data-judul="Prioritas">
+        <span class="kartu-alur__langkah">Prioritas</span>
+        <h2 class="kartu-alur__judul">Apa yang paling penting bagi Anda dalam pengobatan?</h2>
+        <p class="kartu-alur__teks">Pilih semua yang sesuai. Pilihan Anda membantu dokter menyusun prioritas pendekatan.</p>
+        <div class="kartu-alur__isi">
+          <div data-daftar="prioritas"></div>
+          <p class="galat" data-galat="5" role="alert"></p>
+          <div class="kotak-info">
+            <svg class="ikon"><use href="#i-jam"/></svg>
+            <span>Konfirmasikan rincian Anda dan dokter berlisensi akan meninjau kondisi Anda, biasanya dalam waktu 24 jam.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 — Domisili & kontak -->
+      <div class="langkah-alur" data-langkah="6" data-judul="Kontak">
+        <span class="kartu-alur__langkah">Domisili &amp; kontak</span>
+        <h2 class="kartu-alur__judul">Saat ini Anda tinggal di mana?</h2>
+        <p class="kartu-alur__teks">Domisili dipakai untuk pengaturan pengiriman obat bila diresepkan, dan untuk menghubungkan Anda dengan jadwal dokter.</p>
+        <div class="kartu-alur__isi">
+          <div class="bidang">
+            <label for="nama">Nama lengkap</label>
+            <input class="isian" type="text" id="nama" name="nama" autocomplete="name" placeholder="Sesuai identitas">
+          </div>
+          <div class="baris-bidang">
+            <div class="bidang">
+              <label for="email">Email</label>
+              <input class="isian" type="email" id="email" name="email" autocomplete="email" placeholder="nama@email.com">
+            </div>
+            <div class="bidang">
+              <label for="telepon">Nomor HP / WhatsApp</label>
+              <input class="isian" type="tel" id="telepon" name="telepon" autocomplete="tel" inputmode="tel" placeholder="08xxxxxxxxxx">
+            </div>
+          </div>
+          <div class="baris-bidang">
+            <div class="bidang">
+              <label for="provinsi">Provinsi</label>
+              <select class="pilih" id="provinsi" name="provinsi">
+                <option value="">Pilih provinsi</option>
+              </select>
+            </div>
+            <div class="bidang">
+              <label for="kota">Kota / kabupaten</label>
+              <input class="isian" type="text" id="kota" name="kota" autocomplete="address-level2" placeholder="mis. Kota Bandung">
+            </div>
+          </div>
+          <p class="galat" data-galat="6" role="alert"></p>
+        </div>
+      </div>
+
+      <!-- 7 — Ringkasan -->
+      <div class="langkah-alur" data-langkah="7" data-judul="Konfirmasi">
+        <span class="kartu-alur__langkah">Konfirmasi</span>
+        <h2 class="kartu-alur__judul">Konfirmasi rincian Anda</h2>
+        <p class="kartu-alur__teks">Periksa kembali data Anda. Dokter berlisensi akan meninjau kondisi Anda, biasanya dalam waktu 24 jam setelah pembayaran dikonfirmasi.</p>
+        <div class="kartu-alur__isi">
+          <dl class="ringkasan" id="ringkasan"></dl>
+          <label class="persetujuan">
+            <input type="checkbox" id="persetujuan">
+            <span>Saya menyetujui data yang saya isikan digunakan untuk evaluasi medis, dan saya memahami bahwa SLIMFie tidak menggantikan layanan gawat darurat. Saya akan menghubungi fasilitas kesehatan terdekat bila mengalami keluhan akut.</span>
+          </label>
+          <label class="persetujuan">
+            <input type="checkbox" id="ketentuan">
+            <span>Saya telah membaca ketentuan layanan dan informasi penting mengenai terapi medis, termasuk bahwa obat hanya diberikan bila terdapat indikasi medis setelah evaluasi dokter.</span>
+          </label>
+          <div class="panel-kode" id="panel-kode" hidden>
+            <div class="panel-kode__kepala">
+              <svg class="ikon"><use href="#i-surel"/></svg>
+              <div>
+                <strong>Verifikasi email Anda</strong>
+                <p id="info-kode">Kami mengirim kode 6 angka ke email Anda.</p>
+              </div>
+            </div>
+            <div class="kotak-info kotak-info--kuning" id="kode-uji" hidden></div>
+            <div class="bidang">
+              <label for="kode-masuk">Kode verifikasi</label>
+              <input class="isian isian--kode" type="text" id="kode-masuk" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="••••••">
+            </div>
+            <button type="button" class="tautan-tombol" id="tombol-kirim-ulang">Kirim ulang kode</button>
+          </div>
+          <p class="galat" data-galat="7" role="alert"></p>
+          <div class="kotak-info kotak-info--kuning">
+            <svg class="ikon"><use href="#i-uang"/></svg>
+            <span>Langkah berikutnya: verifikasi email, lalu pembayaran biaya konsultasi <strong>Rp199.000</strong>. Setelah lunas, Anda memilih jadwal konsultasi dengan dokter Sp.GK di dashboard.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Selesai -->
+      <div class="langkah-alur selesai" data-langkah="8" id="selesai" tabindex="-1">
+        <div class="selesai__ikon"><svg class="ikon"><use href="#i-centang"/></svg></div>
+        <h2 class="kartu-alur__judul">Satu langkah lagi: kirim evaluasi Anda</h2>
+        <p class="kartu-alur__teks">Tekan <strong>Kirim lewat email</strong> agar data evaluasi sampai ke tim SLIMFie. Kami akan membalas dengan konfirmasi jadwal dan instruksi pembayaran Rp199.000.</p>
+        <span class="selesai__ref" id="selesai-ref">SF-000000-0000</span>
+        <div class="kartu-alur__isi">
+          <div class="selesai__aksi">
+            <a class="tombol tombol--utama" id="tautan-email" href="mailto:cs@slimfie.com">Kirim lewat email <svg class="ikon"><use href="#i-surel"/></svg></a>
+            <button class="tombol tombol--garis-gelap" type="button" id="tombol-salin"><svg class="ikon"><use href="#i-dokumen"/></svg> Salin ringkasan</button>
+          </div>
+          <p class="galat" id="status-salin" role="status"></p>
+          <div class="kotak-info">
+            <svg class="ikon"><use href="#i-perisai"/></svg>
+            <span>Bila aplikasi email tidak terbuka, salin ringkasan lalu kirim ke <strong>cs@slimfie.com</strong> dengan subjek nomor referensi di atas.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="alur__navigasi" id="navigasi-alur">
+        <button type="button" class="tombol tombol--garis-gelap" id="tombol-kembali" hidden><svg class="ikon"><use href="#i-kiri"/></svg> Kembali</button>
+        <span></span>
+        <button type="button" class="tombol tombol--utama" id="tombol-lanjut">Selanjutnya <svg class="ikon"><use href="#i-panah"/></svg></button>
+        <button type="submit" class="tombol tombol--utama" id="tombol-kirim" hidden>Lanjut ke pembayaran <svg class="ikon"><use href="#i-panah"/></svg></button>
+      </div>
+    </form>
+
+    <p class="alur__catatan">Data Anda hanya digunakan untuk evaluasi medis. Butuh bantuan? <a href="mailto:cs@slimfie.com">cs@slimfie.com</a></p>
+  </div>
+</section>
+</main>
+
+<footer class="kaki" style="padding-top:34px">
+  <div class="wadah">
+    <div class="kaki__bawah" style="margin-top:0;border-top:0;padding-top:0">
+      <p class="kaki__hak">&copy; HERIK OKTA JONANDA 2026</p>
+      <p class="kaki__kecil">SLIMFie bukan layanan gawat darurat. Untuk keluhan akut, hubungi fasilitas kesehatan terdekat. Obat hanya diberikan apabila terdapat indikasi medis setelah evaluasi dokter berlisensi.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
