@@ -7,10 +7,17 @@ jobs:
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v6
-    
+
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.4.0
       with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/.vscode/**
+          **/node_modules/**
+          tools/**
+          README.md
